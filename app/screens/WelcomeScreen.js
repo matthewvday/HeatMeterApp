@@ -1,8 +1,8 @@
 import React from 'react';
 import { ImageBackground,StyleSheet, View, Image, Text, Button} from 'react-native';
-import LoginScreen from './LoginScreen';
 
-function WelcomeScreen(props) {
+
+function WelcomeScreen({navigation}) {
     return (
       <ImageBackground 
         style={styles.background}
@@ -17,14 +17,14 @@ function WelcomeScreen(props) {
           <View style={styles.loginButton}> 
           <Button
             title="Login"
-            onPress={()=> console.log("hey")}
+            onPress={()=> navigation.navigate('Login')}
             />
             </View>
         
           <View style={styles.registerButton}>
           <Button
             title="Register"
-            onPress={() => console.log("Button pressed")}
+            onPress={() => navigation.navigate('Register')}
             />
           </View>
 
@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
     loginButton:{
         width:'100%',
         height: 70,
-        backgroundColor: "#fc5c65",
     },
     logo: {
         width: 100,
@@ -55,7 +54,6 @@ const styles = StyleSheet.create({
     registerButton:{
         width:'100%',
         height: 70,
-        backgroundColor: "#4ecdc4",
     },
     title:{
         color: "#faaa3e",
